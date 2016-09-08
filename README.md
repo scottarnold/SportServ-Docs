@@ -23,7 +23,7 @@ It sounds simple, but the first step to a successful campaign is understanding t
 
 - All ad creative must be wrapped in HTML; FanServ does not serve image assets on their own. Our images are called from a media bucket on Amazon S3, but can be served from any absolute path.
 
-- SportServ only needs to be called within the HTML if you are pulling in live game data or sport macros into your creative. You can serve basic ad image units around creative conditions like "Scheduled, In Progress, or Completed"  WITHOUT  calling [sportserver] in your HTML. Instead, use the creative conditions within the admin’s "Creative" tab.
+- SportServ only needs to be called within the HTML if you are pulling in live game data or sport macros into your creative. You can serve basic ad image units around creative conditions like "Scheduled, In Progress, or Completed"  WITHOUT  calling [sportserver] in your HTML. Instead, the SportServ Ad Ops team will use creative conditions while flighting your campaign.
 
 ## Developing Ads
 

@@ -3,15 +3,16 @@
 ### Table Of Contents
 
 - [Overview](#overview)
-- [Developing Ads](#developing ads)
-  - [Skeleton Template](#skeleton template)
-  - [Suggested Workflow](#suggested workflow)
-  - [SportServ Library](#sportserv library)
+- [Developing Ads](#developing-ads)
+  - [Suggested Workflow](#suggested-workflow)
+  - [Skeleton Template](#skeleton-template)
+  - [SportServ Library](#sportserv-library)
   - [Gotchas](#gotchas)
-- [Data Examples](#data examples)
+- [Data Examples](#data-examples)
 
 
 ## Overview
+
 ### What is SportServ?
 Through our exclusive SportRadar partnership, SportServ syncs in real­time with events for 40+ sports, 800+ leagues, and 400,000+ live events. Those data points allow us to serve specific creative based on any condition (think scoring plays, wins, game times, etc.).
 
@@ -25,6 +26,57 @@ It sounds simple, but the first step to a successful campaign is understanding t
 - SportServ only needs to be called within the HTML if you are pulling in live game data or sport macros into your creative. You can serve basic ad image units around creative conditions like "Scheduled, In Progress, or Completed"  WITHOUT  calling [sportserver] in your HTML. Instead, use the creative conditions within the admin’s "Creative" tab.
 
 ## Developing Ads
+
+### Suggested Workflow
+1. Create flat mock ups of your creative. Consider animations and how live sports data can be used to change the look and message of your ad based on live sports conditions.
+2. Turn that mock up into html, css and js. Make up sample dummy data to fill in the live aspects of your
+3. SportServ-ify the ad! Use the [Nunjucks](’https://mozilla.github.io/nunjucks/templating.html')  templating language to swap out your dummy data with real live sports data. Don’t worry about matching your ad to a specific team, SportServ will serve your ad to the appropriate team based on your campaign goals.
+
+### Dev Data
+
+In production, SportServ utilizes a server macro `[sportserver]` to dynamically target and link game data to your ad. We simulate that macro while developing ads by adding the following code in the `<head>` of our ad. There are two data sources you can use while developing an ad.
+
+- *Archived Data*: use the [archived json data](https://github.com/fanserv/SportServ-Docs/tree/master/sample-data) in this repo to simulate game conditions. This is the primary way to develop ads because it garuntees game conditions and let's you develop whenever you want.
+
+- *Live Data*: Contact [developer support](mailto:scott@fanserv.com) to recieve a list of daily game IDs. Pass those IDs into the `ad_config` object and recieve LIVE game data while developing your ad. The downside to this technique is that the ad is recieving live data and game conditions can change while you're developing.
+
+###### Archived Data
+``` HTML
+<!-- SportServ DEV: START -->
+  <script src="https://s3.amazonaws.com/fanserv-static/production/sportserver.js"></script>
+  <script>
+    var sportserver = SportServer.init({
+      url: './sample-data/mlb/pre-game.json',
+      isGameAd: true,
+      renderImmediately: false
+    });
+  </script>
+<!-- SportServ DEV: END -->
+```
+
+###### Live Game Data
+``` HTML
+<!-- SportServ DEV: START -->
+<script>
+  var PROD_LINK = 'https://adserver.fanserver.net/sportserver/v1/games/',
+      STAGING_LINK = 'http://adserver-dev-env.elasticbeanstalk.com/sportserver/v1/games/';
+  var ad_config = {
+    server: STAGING_LINK,
+    game_id: 7798
+  }
+</script>
+<script>var SPORTSERVER_GAME_ID = ad_config.game_id;</script>
+<script src="https://s3.amazonaws.com/fanserv-static/production/sportserver.js"></script>
+<script>
+  var sportserver = SportServer.init({
+    url: ad_config.server + ad_config.game_id + '/',
+    isGameAd: true,
+    renderImmediately: false
+  });
+</script>
+<!-- SportServ DEV: END -->
+```
+
 
 ### Skeleton Template
 ``` HTML
@@ -157,11 +209,6 @@ In the ad skeleton above, we're using `{% if status == "pregame" %}` ([if statem
 
 In the example above, we introduce dynamic messaging into an "in progress" ad. By using simple [comparison operators](https://mozilla.github.io/nunjucks/templating.html#comparisons) we can transform SportServ ads into real-time dynamic sports ads.
 
-
-### Suggested Workflow
-1. Create flat mock ups of your creative. Consider animations and how live sports data can be used to change the look and message of your ad based on live sports conditions.
-2. Turn that mock up into html, css and js. Make up sample dummy data to fill in the live aspects of your
-3. SportServ-ify the ad! Use the [Nunjucks](’https://mozilla.github.io/nunjucks/templating.html')  templating language to swap out your dummy data with real live sports data. Don’t worry about matching your ad to a specific team, SportServ will serve your ad to the appropriate team based on your campaign goals.
 
 
 ### Gotchas

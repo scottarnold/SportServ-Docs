@@ -1,0 +1,26 @@
+{
+  "is_full_coverage": true,
+  "league": "MLB",
+  "id": 6198,
+  "scheduled": "2016-06-10T02:10:00Z",
+  "hash": "42706adffa3100f70dfefdd5be2b2df1",
+  "away": {
+    "alias": "CLE",
+    "id": 1162,
+    "colors": [
+      "#ec184c"
+    ],
+    "logo": "https://sportserver-media.s3.amazonaws.com/media/teams_logos/Cleveland_Indians.png",
+    "name": "Indians"
+  },
+  "status": "scheduled",
+  "home": {
+    "alias": "SEA",
+    "name": "Mariners",
+    "colors": [
+      "#006a65"
+    ],
+    "logo": "https://sportserver-media.s3.amazonaws.com/media/teams_logos/Seattle_Mariners.png",
+    "id": 1172
+  }
+}

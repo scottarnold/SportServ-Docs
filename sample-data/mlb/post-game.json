@@ -1,0 +1,75 @@
+{
+  "period": 9,
+  "events": [],
+  "id": 7196,
+  "scheduled": "2016-06-09T21:10:00Z",
+  "status": "closed",
+  "home": {
+    "logo": "https://sportserver-media.s3.amazonaws.com/media/teams_logos/Colorado_Rockies.png",
+    "id": 1146,
+    "points": 11,
+    "players": [],
+    "stats": {
+      "hits": 14,
+      "errors": 3,
+      "score_by_inning": {
+        "4": "2",
+        "6": "0",
+        "8": "0",
+        "1": "4",
+        "3": "0",
+        "9": "X",
+        "5": "3",
+        "7": "0",
+        "2": "2"
+      }
+    },
+    "name": "Rockies",
+    "colors": [
+      "#26388f"
+    ],
+    "alias": "COL"
+  },
+  "completed": "2016-06-10T00:03:00Z",
+  "is_full_coverage": true,
+  "league": "MLB",
+  "hash": "558cba16b5fc86face31c50f14bb108e",
+  "extra": {
+    "count": {
+      "outs": 3,
+      "pitch_count": 3,
+      "balls": 1,
+      "strikes": 1
+    },
+    "inning": "9th",
+    "last_event_desc": "John Jaso flies out to left field to Ryan Raburn.",
+    "top_or_bottom": "top",
+    "period": 9
+  },
+  "away": {
+    "logo": "https://sportserver-media.s3.amazonaws.com/media/teams_logos/Pittsburgh_Pirates.png",
+    "id": 1145,
+    "points": 5,
+    "players": [],
+    "stats": {
+      "hits": 7,
+      "errors": 0,
+      "score_by_inning": {
+        "3": "4",
+        "6": "0",
+        "8": "0",
+        "1": "1",
+        "4": "0",
+        "9": "0",
+        "5": "0",
+        "7": "0",
+        "2": "0"
+      }
+    },
+    "name": "Pirates",
+    "colors": [
+      "#fdb827"
+    ],
+    "alias": "PIT"
+  }
+}

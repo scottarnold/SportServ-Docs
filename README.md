@@ -6,7 +6,7 @@
 - [Developing Ads](#developing-ads)
   - [Suggested Workflow](#suggested-workflow)
   - [Skeleton Template](#skeleton-template)
-  - [SportServ Library](#sportserv-library)
+  - [Development Data](#development-data)
   - [Gotchas](#gotchas)
 - [Data Examples](#data-examples)
 
@@ -32,7 +32,7 @@ It sounds simple, but the first step to a successful campaign is understanding t
 2. Turn that mock up into html, css and js. Make up sample dummy data to fill in the live aspects of your
 3. SportServ-ify the ad! Use the [Nunjucks](’https://mozilla.github.io/nunjucks/templating.html')  templating language to swap out your dummy data with real live sports data. Don’t worry about matching your ad to a specific team, SportServ will serve your ad to the appropriate team based on your campaign goals.
 
-### Dev Data
+### Development Data
 
 In production, SportServ utilizes a server macro `[sportserver]` to dynamically target and link game data to your ad. We simulate that macro while developing ads by adding the following code in the `<head>` of our ad. There are two data sources you can use while developing an ad.
 

@@ -1,14 +1,15 @@
 # SportServ Documentation
 
-## Table Of Contents
+### Table Of Contents
 
-- SportServ SDK
-- Anatomy of Ad (sportserv feed + templating)
-- Handling Assets
-- Data Examples:
-	- [MLB - Pregame](#pregame)
-	- [MLB - Live Game](#example-live_game)
-	- [MLB - Post Game](#example-post_game)
+- [Overview](#overview)
+- [Developing Ads](#developing ads)
+  - [Skeleton Template](#skeleton template)
+  - [Suggested Workflow](#suggested workflow)
+  - [SportServ Library](#sportserv library)
+  - [Gotchas](#gotchas)
+- [Data Examples](#data examples)
+
 
 ## Overview
 ### What is SportServ?
@@ -23,235 +24,154 @@ It sounds simple, but the first step to a successful campaign is understanding t
 
 - SportServ only needs to be called within the HTML if you are pulling in live game data or sport macros into your creative. You can serve basic ad image units around creative conditions like "Scheduled, In Progress, or Completed"  WITHOUT  calling [sportserver] in your HTML. Instead, use the creative conditions within the admin’s "Creative" tab.
 
+## Developing Ads
 
-## Suggested Workflow
+### Skeleton Template
+``` HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FanServ Demo</title>
+  <link rel="icon" type="image/x-icon" href="https://fanserv-media.s3.amazonaws.com/client/shared/favicon.ico" />
+  <!-- NOTE: Add link to external css file -->
+  <!-- SportServ DEV: START -->
+  <script>
+    var PROD_LINK = 'https://adserver.fanserver.net/sportserver/v1/games/',
+        STAGING_LINK = 'http://adserver-dev-env.elasticbeanstalk.com/sportserver/v1/games/';
+    var ad_config = {
+      server: STAGING_LINK,
+      game_id: 7798
+    }
+  </script>
+  <script>var SPORTSERVER_GAME_ID = ad_config.game_id;</script>
+  <script src="https://s3.amazonaws.com/fanserv-static/production/sportserver.js"></script>
+  <script>
+    var sportserver = SportServer.init({
+      url: ad_config.server + ad_config.game_id + '/',
+      isGameAd: true,
+      renderImmediately: false
+    });
+  </script>
+  <!-- SportServ DEV: END -->
+  <script type="text/template">
+    <a href="ADD-CLICK-THROUGH-LINK" class="container">
+      <!-- PREGAME AD STATE -->
+      {% if status == "pregame" %}
+      <div class="scoreBox">
+        <!-- Away Team -->
+        <div class="awayTeam">
+          <div class="awayLogo">
+            <img class="awayImg" src="https://your-asset-url.com/{{ away.id }}.png">
+          </div>
+          <div class="awayName">{{ away.alias }}</div>
+        </div>
+        <!-- Game Info -->
+        <div class="gameInfo">
+          <div class="outs">{{ countdown("%-H hour%!H %-M minute%!M %-S second%!S") }} until game time!</div>
+        </div>
+        <!-- Home Team -->
+        <div class="homeTeam">
+          <div class="homeLogo">
+            <img class="homeImg" src="https://your-asset-url.com/{{ home.id }}.png">
+          </div>
+          <div class="homeName">{{ home.alias }}</div>
+        </div>
+      </div>
+      <!-- LIVE GAME AD STATE -->
+      {% elif status == "inprogress" %}
+      <div class="scoreBox">
+        <!-- Away Team -->
+        <div class="awayTeam">
+          <div class="awayLogo">
+            <img class="awayImg" src="https://your-asset-url.com/{{ away.id }}.png">
+          </div>
+          <div class="awayName">{{ away.alias }}</div>
+          <div class="awayScore">{{ away.points }}</div>
+        </div>
+        <!-- Game Info -->
+        <div class="gameInfo">
+          <div class="gameClock">{{ extra.top_or_bottom }}{{ extra.inning }}</div>
+          <div class="outs">{{ extra.outs }}</div>
+        </div>
+        <!-- Home Team -->
+        <div class="homeTeam">
+          <div class="homeLogo">
+            <img class="homeImg" src="https://your-asset-url.com/{{ home.id }}.png">
+          </div>
+          <div class="homeName">{{ home.alias }}</div>
+          <div class="homeScore">{{ home.points }}</div>
+        </div>
+      </div>
+      {% endif %}
+    </a>
+  </script>
+</head>
+<body>
+
+<!-- NOTE: SportServ renders the ad into the body -->
+
+</body>
+</html>
+```
+
+In the ad skeleton above, we're using `{% if status == "pregame" %}` ([if statements](https://mozilla.github.io/nunjucks/templating.html#if)) to target specific game conditions. We then use `{% elif status == "inprogress" %}` to target the live game. The game's _status_ data attribute is the key for most ad transitions.
+
+``` HTML
+{% if status == "inprogress" %}
+  <div class="scoreBox">
+    <div class="primaryTagline">
+    {% if home.points > away.points %}
+      <!-- Home Team Winning Messaging -->
+    {% elif home.points < away.points %}
+      <!-- Away Team Winning Messaging -->
+    {% elif home.points == away.points %}
+      <!-- Tie Game Messaging -->
+    {% endif %}
+    </div>
+    <!-- Away Team -->
+    <div class="awayTeam">
+      <div class="awayLogo">
+        <img class="awayImg" src="https://your-asset-url.com/{{ away.id }}.png">
+      </div>
+      <div class="awayName">{{ away.alias }}</div>
+      <div class="awayScore">{{ away.points }}</div>
+    </div>
+    <!-- Game Info -->
+    <div class="gameInfo">
+      <div class="gameClock">{{ extra.top_or_bottom }}{{ extra.inning }}</div>
+      <div class="outs">{{ extra.outs }}</div>
+    </div>
+    <!-- Home Team -->
+    <div class="homeTeam">
+      <div class="homeLogo">
+        <img class="homeImg" src="https://your-asset-url.com/{{ home.id }}.png">
+      </div>
+      <div class="homeName">{{ home.alias }}</div>
+      <div class="homeScore">{{ home.points }}</div>
+    </div>
+  </div>
+{% endif %}
+```
+
+In the example above, we introduce dynamic messaging into an "in progress" ad. By using simple [comparison operators](https://mozilla.github.io/nunjucks/templating.html#comparisons) we can transform SportServ ads into real-time dynamic sports ads.
+
+
+### Suggested Workflow
 1. Create flat mock ups of your creative. Consider animations and how live sports data can be used to change the look and message of your ad based on live sports conditions.
 2. Turn that mock up into html, css and js. Make up sample dummy data to fill in the live aspects of your
 3. SportServ-ify the ad! Use the [Nunjucks](’https://mozilla.github.io/nunjucks/templating.html')  templating language to swap out your dummy data with real live sports data. Don’t worry about matching your ad to a specific team, SportServ will serve your ad to the appropriate team based on your campaign goals.
 
 
-#### SportServ Library
+### Gotchas
+- `HTTPS` is required for asset hosting.
 
-###### Production:
-
-``` HTML
-[sportserver]
-```
-
-In production this macro is expanded to the following. Production enables dynamic game targetting...
-
-###### Development:
-
-``` HTML
-<script src="https://s3.amazonaws.com/fanserv-static/dev/nunjucks.min.js"></script>
-<script src="https://s3.amazonaws.com/fanserv-static/dev/sportserver.js"></script>
-<script>
-  SportServer.init({
-    url: "http://adserver-dev-env.elasticbeanstalk.com/sportserver/v1/games/5788/", isGameAd: true
-  })
-</script>
-```
-
-## SportServ Initializer Options
-
--  `isGameAd` (boolean) - if the data received is for a game. It will have flattened data if so.
-- `url` (string) - URL to request data from
-- `gameId` (int) - id of a game, will be used to generate a url
-- `teamId` (int) - id of a team, will be used to generate a url
-- `filters` (func) - filters to add to the templating engine
-
-```javascript
-<script>
-	var sportserver = SportServer.init({
-     url: 'https://adserver.fanserver.net/sportserver/v1/games/' + SPORTSERVER_GAME_ID + '/',
-	  isGameAd: true,
-	  renderImmediately: true
-	});
-</script>
-```
+- Certain sports (example: MLB) often start 5-10 min after their scheduled time. Our data feeds update as soon as the game data is available. To account for this we've included a game state called `status: "about-to-start"`. Use this when you don’t want a countdown clock stuck at 00:00:00 while you're waiting for the opening pitch.
 
 
-## SportServ Load States
-
-- `SPORTSERVER_EVENTS.RENDER` - An update occurred in the game associated with the ad
-- `SPORTSERVER_EVENTS.GAME_UPDATE` - The ad was rendered for the first time
-- `SPORTSERVER_EVENTS.RERENDER` - The ad was rerendered
-
-
-
-#####  Render
-
-```html
-sportserver.events.on(
-  SportServer.SPORTSERVER_EVENTS.RENDER, function () {
-    console.log('initial render');
-})
-```
-
-##### Game Update
-```html
-sportserver.events.on(
-  SportServer.SPORTSERVER_EVENTS.GAME_UPDATE, function () {
-    console.log('game update');
-    Animation.start();
-})
-```
-
-##### RERENDER
-
-```html
-sportserver.events.on(
-  SportServer.SPORTSERVER_EVENTS.RERENDER, function () {
-    console.log('re-rendered');
-})
-```
-
-
-
-## Game States (MLB) - Discontinued in V2
-
-|Game State   |Syntax                                  |Descreiption        |
-|-------------|----------------------------------------|--------------------|
-|No Game      |`{% block nogame %}...{% endblock %}`   |Shows when no scheduled game  |
-|Pregame      |`{% block pregame %}...{% endblock %}`  |Shows x hours before the game|
-|Live Game    |`{% block ingame %}...{% endblock %}`   |includes live score |
-|Game Over    |`{% block pastgame %}...{% endblock %}` |game over           |
-
-## Live game state logic examples
-
-We combine simple template logic with our game data to further drill down into specific game states
-
-##### Tie Game
-``` javascript
-{% if home.points == away.points %}
-```
-
-##### Home Team Down
-``` javascript
-{% if home.points < away.points %}
-```
-
-##### Home Team Up
-``` javascript
-{% if home.points > away.points %}
-```
-
-##### Home Team Up more than 5
-``` javascript
-{% if (home.points - away.points) > 5  %}
-```
-
-
-## Data Structures
-
-### MLB
-
-###### PREGAME
-
-``` JSON
-{
-  "away": {
-    "alias": "SD",
-    "name": "Padres",
-    "colors": [ "#05143f" ],
-    "logo": "https://sportserver-media.s3.amazonaws.com/media/teams_logos/San_Diego_Padres.png",
-    "id": 1160
-  },
-  "is_full_coverage": true,
-  "status": "scheduled",
-  "scheduled": "2016-07-22T23:05:00Z",
-  "league": "MLB",
-  "id": 8394,
-  "hash": "04b7b2250b8927e1657a41f1c3290fce",
-  "home": {
-    "alias": "WSH",
-    "name": "Nationals",
-    "colors": [
-      "#cc1242"
-    ],
-    "logo": "https://sportserver-media.s3.amazonaws.com/media/teams_logos/Washington_Nationals.png",
-    "id": 1169
-  }
-}
-```
-
-* Note: MLB games often start 5-10 min after their scheduled time. We’ve included the state `status: "about-to-start"` for these situations. You can use this when you don’t want a countdown clock stuck at 00:00:00 before the opening pitch.
-
-
-###### LIVE GAME
-
-``` JSON
-{
-  "status": "inprogress",
-  "home": {
-    "stats": {
-      "hits": 0,
-      "score_by_inning": {
-        "2": "-",
-        "5": "-",
-        "9": "-",
-        "1": "X",
-        "4": "-",
-        "7": "-",
-        "8": "-",
-        "6": "-",
-        "3": "-"
-      },
-      "errors": 0
-    },
-    "players": [],
-    "colors": [
-      "#fdb827"
-    ],
-    "points": 0,
-    "logo": "https://sportserver-media.s3.amazonaws.com/media/teams_logos/Pittsburgh_Pirates.png",
-    "alias": "PIT",
-    "name": "Pirates",
-    "id": 1145
-  },
-  "scheduled": "2016-07-22T23:05:00Z",
-  "away": {
-    "stats": {
-      "hits": 0,
-      "score_by_inning": {
-        "2": "-",
-        "4": "-",
-        "6": "-",
-        "1": "0",
-        "5": "-",
-        "7": "-",
-        "8": "-",
-        "3": "-",
-        "9": "-"
-      },
-      "errors": 0
-    },
-    "players": [],
-    "colors": [
-      "#cc1242"
-    ],
-    "points": 0,
-    "logo": "https://sportserver-media.s3.amazonaws.com/media/teams_logos/Philadelphia_Phillies.png",
-    "alias": "PHI",
-    "name": "Phillies",
-    "id": 1148
-  },
-  "hash": "0f5246013777a282e5e7e52042ff1caf",
-  "events": [],
-  "extra": {
-    "top_or_bottom": "top",
-    "count": {
-      "outs": 0,
-      "pitch_count": 2,
-      "balls": 0,
-      "strikes": 2
-    },
-    "inning": "1st",
-    "period": 1
-  },
-  "is_full_coverage": true,
-  "league": "MLB",
-  "id": 8200,
-  "period": 1
-}
-```
+## Data Examples
+- [MLB - Pregame](https://github.com/fanserv/SportServ-Docs/blob/master/sample-data/mlb/pre-game.json)
+- [MLB - Live Game](https://github.com/fanserv/SportServ-Docs/blob/master/sample-data/mlb/live-game.json)
+- [MLB - Post Game](https://github.com/fanserv/SportServ-Docs/blob/master/sample-data/mlb/post-game.json)
+- NFL Data Coming September 9th, 2016

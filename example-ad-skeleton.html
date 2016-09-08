@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>FanServ Demo</title>
+  <link rel="icon" type="image/x-icon" href="https://fanserv-media.s3.amazonaws.com/client/shared/favicon.ico" />
+  <!-- NOTE: Add link to external css file -->
+
+  <!-- SportServ DEV: START -->
+  <script>
+    var PROD_LINK = 'https://adserver.fanserver.net/sportserver/v1/games/',
+        STAGING_LINK = 'http://adserver-dev-env.elasticbeanstalk.com/sportserver/v1/games/';
+
+    var ad_config = {
+      server: STAGING_LINK,
+      game_id: 7798
+    }
+  </script>
+  <script>var SPORTSERVER_GAME_ID = ad_config.game_id;</script>
+  <script src="https://s3.amazonaws.com/fanserv-static/production/sportserver.js"></script>
+  <!-- SportServ DEV: END -->
+
+  <script type="text/template">
+    <a href="ADD-CLICK-THROUGH-LINK" class="container">
+      <!-- PREGAME AD STATE -->
+      {% if status == "pregame" %}
+      <div class="scoreBox">
+        <!-- Away Team -->
+        <div class="awayTeam">
+          <div class="awayLogo">
+            <img class="awayImg" src="https://your-asset-url.com/{{ away.id }}.png">
+          </div>
+          <div class="awayName">{{ away.alias }}</div>
+        </div>
+        <!-- Game Info -->
+        <div class="gameInfo">
+          <div class="outs">{{ countdown("%-H hour%!H %-M minute%!M %-S second%!S") }} until game time!</div>
+        </div>
+
+        <!-- Home Team -->
+        <div class="homeTeam">
+          <div class="homeLogo">
+            <img class="homeImg" src="https://your-asset-url.com/{{ home.id }}.png">
+          </div>
+          <div class="homeName">{{ home.alias }}</div>
+        </div>
+      </div>
+      <!-- LIVE GAME AD STATE -->
+      {% elif status == "inprogress" %}
+      <div class="scoreBox">
+        <!-- Away Team -->
+        <div class="awayTeam">
+          <div class="awayLogo">
+            <img class="awayImg" src="https://your-asset-url.com/{{ away.id }}.png">
+          </div>
+          <div class="awayName">{{ away.alias }}</div>
+          <div class="awayScore">{{ away.points }}</div>
+        </div>
+        <!-- Game Info -->
+        <div class="gameInfo">
+          <div class="gameClock">{{ extra.top_or_bottom }}{{ extra.inning }}</div>
+          <div class="outs">{{ extra.outs }}</div>
+        </div>
+
+        <!-- Home Team -->
+        <div class="homeTeam">
+          <div class="homeLogo">
+            <img class="homeImg" src="https://your-asset-url.com/{{ home.id }}.png">
+          </div>
+          <div class="homeName">{{ home.alias }}</div>
+          <div class="homeScore">{{ home.points }}</div>
+        </div>
+      </div>
+      {% endif %}
+    </a>
+  </script>
+</head>
+<body>
+
+<!-- NOTE: SportServ renders the ad into the body -->
+
+</body>
+</html>

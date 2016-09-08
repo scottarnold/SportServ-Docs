@@ -10,8 +10,18 @@
 	- [MLB - Live Game](#example-live_game)
 	- [MLB - Post Game](#example-post_game)
 
-## Summary
-Creating SportServ ads is as easy as creating a minitiure website!Q Our ads are standard HTML5 ads and give you complete control over the HTML, CSS and JS that your ad uses.
+## Overview
+### What is SportServ?
+Through our exclusive SportRadar partnership, SportServ syncs in real­time with events for 40+ sports, 800+ leagues, and 400,000+ live events. Those data points allow us to serve specific creative based on any condition (think scoring plays, wins, game times, etc.).
+
+That means personalized ads tailored to the right fans, at the perfect moment in time.
+
+### Understand Your Campaign
+It sounds simple, but the first step to a successful campaign is understanding the business needs and goals of the partner. Important things to understand when setting up your campaign:
+
+- All ad creative must be wrapped in HTML; FanServ does not serve image assets on their own. Our images are called from a media bucket on Amazon S3, but can be served from any absolute path.
+
+- SportServ only needs to be called within the HTML if you are pulling in live game data or sport macros into your creative. You can serve basic ad image units around creative conditions like "Scheduled, In Progress, or Completed"  WITHOUT  calling [sportserver] in your HTML. Instead, use the creative conditions within the admin’s "Creative" tab.
 
 
 ## Suggested Workflow

@@ -29,7 +29,7 @@ It sounds simple, but the first step to a successful campaign is understanding t
 
 ### Suggested Workflow
 1. Create flat mock ups of your creative. Consider animations and how live sports data can be used to change the look and message of your ad based on live sports conditions.
-2. Turn that mock up into html, css and js. Make up sample dummy data to fill in the live aspects of your
+2. Turn that mock up into html, css and js.
 3. SportServ-ify the ad! Use the [Nunjucks](’https://mozilla.github.io/nunjucks/templating.html')  templating language to swap out your dummy data with real live sports data. Don’t worry about matching your ad to a specific team, SportServ will serve your ad to the appropriate team based on your campaign goals.
 
 ### Development Data

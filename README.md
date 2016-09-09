@@ -5,8 +5,9 @@
 - [Overview](#overview)
 - [Developing Ads](#developing-ads)
   - [Suggested Workflow](#suggested-workflow)
-  - [Skeleton Template](#skeleton-template)
   - [Development Data](#development-data)
+  - [Skeleton Template](#skeleton-template)
+  - [Countdown](#countdown)
   - [Gotchas](#gotchas)
 - [Data Examples](#data-examples)
 
@@ -209,6 +210,14 @@ In the ad skeleton above, we're using `{% if status == "pregame" %}` ([if statem
 
 In the example above, we introduce dynamic messaging into an "in progress" ad. By using simple [comparison operators](https://mozilla.github.io/nunjucks/templating.html#comparisons) we can transform SportServ ads into real-time dynamic sports ads.
 
+
+### Countdown
+
+We often want to include a countdown to the start of the game in our ad's pregame state. SportServ includes a handy countdown function based on [jQuery.countdown](http://hilios.github.io/jQuery.countdown/documentation.html). Simply pass the `countdown()` function into nunjucks' bracket (`{{ }}`) to trigger a countdown to the game! Date formatting options are [available here](http://hilios.github.io/jQuery.countdown/documentation.html#formatter).
+
+```
+<div class="cd">{{ countdown("%-H hour%!H %-M minute%!M %-S second%!S") }} until game time!</div>
+```
 
 
 ### Gotchas

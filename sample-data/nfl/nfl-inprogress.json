@@ -1,0 +1,57 @@
+{
+  "league": "NFL",
+  "scheduled": "2016-09-09T00:30:00Z",
+  "clock": "00:14",
+  "status": "inprogress",
+  "away": {
+    "name": "Panthers",
+    "points": 14,
+    "logo": "",
+    "alias": "CAR",
+    "colors": [],
+    "id": 1175,
+    "players": []
+  },
+  "hash": "370687f2065db44df118dc79cdae6cdb",
+  "id": 5699,
+  "is_full_coverage": true,
+  "extra": {
+    "formation": "Shotgun",
+    "clock": ":14",
+    "side": "DEN",
+    "type": "play",
+    "timeout": {
+      "number": "2"
+    },
+    "sequence": "89",
+    "play_type": "pass",
+    "yfd": "10",
+    "official": "0",
+    "event_type": "tvtimeout",
+    "participants": "[{\"name\": \"Cam Newton\", \"team\": \"CAR\", \"position\": \"QB\", \"jersey\": 1}]",
+    "yard_line": "33",
+    "direction": "Middle",
+    "score": {
+      "points": 1,
+      "team": "CAR",
+      "type": "extrapoint"
+    },
+    "winner": {
+      "outcome": "kick",
+      "team": "CAR"
+    },
+    "down": "1",
+    "distance": "Short",
+    "summary": "1-C.Newton spikes the ball at DEN 33 for no gain."
+  },
+  "home": {
+    "name": "Broncos",
+    "colors": [],
+    "logo": "",
+    "alias": "DEN",
+    "points": 7,
+    "id": 1174,
+    "players": []
+  },
+  "period": 2
+}

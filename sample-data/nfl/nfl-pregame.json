@@ -1,0 +1,22 @@
+{
+  "away": {
+    "alias": "CAR",
+    "logo": "",
+    "colors": [],
+    "name": "Panthers",
+    "id": 1175
+  },
+  "hash": "c99dac0969c8cf1f2199f673ba127697",
+  "id": 5699,
+  "scheduled": "2016-09-09T00:30:00Z",
+  "is_full_coverage": true,
+  "home": {
+    "alias": "DEN",
+    "logo": "",
+    "colors": [],
+    "name": "Broncos",
+    "id": 1174
+  },
+  "league": "NFL",
+  "status": "scheduled"
+}

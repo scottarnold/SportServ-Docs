@@ -1,0 +1,57 @@
+{
+  "league": "NFL",
+  "scheduled": "2016-09-09T00:30:00Z",
+  "completed": "2016-09-09T03:52:53Z",
+  "status": "closed",
+  "away": {
+    "name": "Panthers",
+    "points": 20,
+    "logo": "",
+    "alias": "CAR",
+    "colors": [],
+    "id": 1175,
+    "players": []
+  },
+  "hash": "d65801776e66c351b4a54d4c9c0e3024",
+  "id": 5699,
+  "is_full_coverage": true,
+  "extra": {
+    "formation": "Shotgun",
+    "direction": "Left",
+    "side": "DEN",
+    "type": "event",
+    "timeout": {
+      "number": "2"
+    },
+    "sequence": "191",
+    "play_type": "fieldgoal",
+    "yfd": "5",
+    "official": "0",
+    "event_type": "gameover",
+    "participants": "[{\"team\": \"CAR\", \"jersey\": 9, \"position\": \"K\", \"name\": \"Graham Gano\"}]",
+    "yard_line": "40",
+    "clock": ":00",
+    "score": {
+      "points": 3,
+      "team": "CAR",
+      "type": "fieldgoal"
+    },
+    "winner": {
+      "outcome": "kick",
+      "team": "CAR"
+    },
+    "down": "3",
+    "distance": "Short",
+    "summary": "End of Game"
+  },
+  "home": {
+    "name": "Broncos",
+    "colors": [],
+    "logo": "",
+    "alias": "DEN",
+    "points": 21,
+    "id": 1174,
+    "players": []
+  },
+  "period": 4
+}

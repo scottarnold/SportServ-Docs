@@ -221,4 +221,6 @@ In the example above, we introduce dynamic messaging into an "in progress" ad. B
 - [MLB - Pregame](https://github.com/fanserv/SportServ-Docs/blob/master/sample-data/mlb/pre-game.json)
 - [MLB - Live Game](https://github.com/fanserv/SportServ-Docs/blob/master/sample-data/mlb/live-game.json)
 - [MLB - Post Game](https://github.com/fanserv/SportServ-Docs/blob/master/sample-data/mlb/post-game.json)
-- NFL Data Coming September 9th, 2016
+- [NFL - Pre Game](https://github.com/fanserv/SportServ-Docs/blob/master/sample-data/nfl/nfl_pre-game.json)
+- [NFL - Live Game](https://github.com/fanserv/SportServ-Docs/blob/master/sample-data/nfl/nfl_live-game.json)
+- [NFL - Post Game](https://github.com/fanserv/SportServ-Docs/blob/master/sample-data/nfl/nfl_post-game.json)

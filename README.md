@@ -39,7 +39,7 @@ In production, SportServ utilizes a server macro `[sportserver]` to dynamically 
 
 - *Archived Data*: use the [archived json data](https://github.com/fanserv/SportServ-Docs/tree/master/sample-data) in this repo to simulate game conditions. This is the primary way to develop ads because it guarantees game conditions and let's you develop whenever you want.
 
-- *Live Data*: Contact [developer support](mailto:scott@fanserv.com) to recieve a list of daily game IDs. Pass those IDs into the `ad_config` object and recieve LIVE game data while developing your ad. The downside to this technique is that the ad is recieving live data and game conditions can change while you're developing.
+- *Live Data*: Get up to date [game id's here](http://demo.fanserv.com/nfl-ids/). Pass those IDs into the `ad_config` object and recieve LIVE game data while developing your ad. The downside to this technique is that the ad is recieving live data and game conditions can change while you're developing.
 
 ###### Archived Data
 ``` HTML

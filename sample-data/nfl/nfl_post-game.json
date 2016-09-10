@@ -8,7 +8,7 @@
     "points": 20,
     "logo": "",
     "alias": "CAR",
-    "colors": [],
+    "colors": ["#0085ca","#000000","#bfc0bf"],
     "id": 1175,
     "players": []
   },
@@ -46,7 +46,7 @@
   },
   "home": {
     "name": "Broncos",
-    "colors": [],
+    "colors": ["#002244","#fb4f14"],
     "logo": "",
     "alias": "DEN",
     "points": 21,

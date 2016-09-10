@@ -2,7 +2,7 @@
   "away": {
     "alias": "CAR",
     "logo": "",
-    "colors": [],
+    "colors": ["#0085ca","#000000","#bfc0bf"],
     "name": "Panthers",
     "id": 1175
   },
@@ -13,7 +13,7 @@
   "home": {
     "alias": "DEN",
     "logo": "",
-    "colors": [],
+    "colors": ["#002244","#fb4f14"],
     "name": "Broncos",
     "id": 1174
   },

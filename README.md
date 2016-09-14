@@ -59,10 +59,8 @@ In production, SportServ utilizes a server macro `[sportserver]` to dynamically 
 ``` HTML
 <!-- SportServ DEV: START -->
 <script>
-  var PROD_LINK = 'https://adserver.fanserver.net/sportserver/v1/games/',
-      STAGING_LINK = 'http://adserver-dev-env.elasticbeanstalk.com/sportserver/v1/games/';
   var ad_config = {
-    server: STAGING_LINK,
+    server: 'https://adserver.fanserver.net/sportserver/v1/games',
     game_id: 7798
   }
 </script>
@@ -91,10 +89,8 @@ In production, SportServ utilizes a server macro `[sportserver]` to dynamically 
   <!-- NOTE: Add link to external css file -->
   <!-- SportServ DEV: START -->
   <script>
-    var PROD_LINK = 'https://adserver.fanserver.net/sportserver/v1/games/',
-        STAGING_LINK = 'http://adserver-dev-env.elasticbeanstalk.com/sportserver/v1/games/';
     var ad_config = {
-      server: STAGING_LINK,
+      server: 'https://adserver.fanserver.net/sportserver/v1/games/',
       game_id: 7798
     }
   </script>

@@ -219,12 +219,11 @@ We often want to include a countdown to the start of the game in our ad's pregam
 
 ### Beyond Templating
 
-Sometimes while developing an ad your design will require contacting a 3rd party API, accessing a previously compiled object or simply updating the DOM with game data. To enable this, the `SportServ.init()` method returns an object named `sportserver`.
-
-The `sportserver` object also includes up to date game data (`sportserver.gamesData`) that you can access directly with javascript.
+Sometimes while building an ad your design will require contacting a 3rd party API, accessing a previously compiled object or simply updating the DOM with game data. To enable this, the `SportServ.init()` method returns an object named `sportserver`. The `sportserver` object includes up to date game data (`sportserver.gamesData`) that you can access directly with javascript and use in your ad.
 
 There are three events that will trigger your code: `RENDER`, `RERENDER` and `GAME_UPDATE`. Those events can be used in the pattern below.
 
+In the following example we reference a value from the `teams` (not shown) object by passing in a dynamic value from the `sportserver.gameData` object. Then we update the DOM direclty with this new data like you would in any other DOM manipulation.
 
 ``` javascript
 sportserver.events.on(
@@ -233,7 +232,7 @@ sportserver.events.on(
     var description = "Nike Men's<br/>" + sportserver.gamesData.away.alias +
                       " Home Jersey<br/>" + teamInfo.player +
                       "<br/>#" + teamInfo.number;
-    document.getElementById('slide4-copy').innerHTML = description;
+    document.getElementById('ad-copy').innerHTML = description;
 })
 ```
 

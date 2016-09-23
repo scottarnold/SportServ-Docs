@@ -8,6 +8,7 @@
   - [Development Data](#development-data)
   - [Skeleton Template](#skeleton-template)
   - [Countdown](#countdown)
+  - [Beyond Templating](#beyond-templating)
   - [Gotchas](#gotchas)
 - [Data Examples](#data-examples)
 
@@ -213,6 +214,27 @@ We often want to include a countdown to the start of the game in our ad's pregam
 
 ```
 <div class="cd">{{ countdown("%-H hour%!H %-M minute%!M %-S second%!S") }} until game time!</div>
+```
+
+
+### Beyond Templating
+
+Sometimes while developing an ad your design will require contacting a 3rd party API, accessing a previously compiled object or simply updating the DOM with game data. To enable this, the `SportServ.init()` method returns an object named `sportserver`.
+
+The `sportserver` object also includes up to date game data (`sportserver.gamesData`) that you can access directly with javascript.
+
+There are three events that will trigger your code: `RENDER`, `RERENDER` and `GAME_UPDATE`. Those events can be used in the pattern below.
+
+
+``` javascript
+sportserver.events.on(
+  SportServer.SPORTSERVER_EVENTS.RENDER, function () {
+    var teamInfo = teams[sportserver.gamesData.away.alias];
+    var description = "Nike Men's<br/>" + sportserver.gamesData.away.alias +
+                      " Home Jersey<br/>" + teamInfo.player +
+                      "<br/>#" + teamInfo.number;
+    document.getElementById('slide4-copy').innerHTML = description;
+})
 ```
 
 

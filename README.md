@@ -105,6 +105,12 @@ In production, SportServ utilizes a server macro `[sportserver]` to dynamically 
     });
   </script>
   <!-- SportServ DEV: END -->
+  <script>
+  sportserver.events.on(
+    SportServer.SPORTSERVER_EVENTS.RENDER, function () {
+      // Your custom code here
+  });
+  </script>
   <script type="text/template">
     <a href="ADD-CLICK-THROUGH-LINK" class="container">
       <!-- PREGAME AD STATE -->

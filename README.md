@@ -250,9 +250,9 @@ sportserver.events.on(
 
 
 ## Data Examples
-- [MLB - Pregame](https://github.com/fanserv/SportServ-Docs/blob/master/sample-data/mlb/pre-game.json)
-- [MLB - Live Game](https://github.com/fanserv/SportServ-Docs/blob/master/sample-data/mlb/live-game.json)
-- [MLB - Post Game](https://github.com/fanserv/SportServ-Docs/blob/master/sample-data/mlb/post-game.json)
+- [MLB - Pregame](https://github.com/fanserv/SportServ-Docs/blob/master/sample-data/mlb/mlb_pre-game.json)
+- [MLB - Live Game](https://github.com/fanserv/SportServ-Docs/blob/master/sample-data/mlb/mlb_live-game.json)
+- [MLB - Post Game](https://github.com/fanserv/SportServ-Docs/blob/master/sample-data/mlb/mlb_post-game.json)
 - [NFL - Pre Game](https://github.com/fanserv/SportServ-Docs/blob/master/sample-data/nfl/nfl_pre-game.json)
 - [NFL - Live Game](https://github.com/fanserv/SportServ-Docs/blob/master/sample-data/nfl/nfl_live-game.json)
 - [NFL - Post Game](https://github.com/fanserv/SportServ-Docs/blob/master/sample-data/nfl/nfl_post-game.json)

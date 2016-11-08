@@ -1,0 +1,43 @@
+{
+  "home": {
+    "market": "Charlotte",
+    "alias": "CHA",
+    "logo": "",
+    "id": 1138,
+    "colors": [
+      "#1D1160",
+      "#008CA8",
+      "#A1A1A4"
+    ],
+    "name": "Hornets",
+    "points": null
+  },
+  "scheduled": "2016-11-08T00:00:00Z",
+  "venue": {
+    "city": "Charlotte",
+    "name": "Time Warner Cable Arena",
+    "zip": 28202,
+    "address": "330 E. Trade St.",
+    "state": "NC",
+    "country_code": "USA",
+    "capacity": 20200
+  },
+  "away": {
+    "market": "Indiana",
+    "points": null,
+    "alias": "IND",
+    "logo": "",
+    "colors": [
+      "#FFC633",
+      "#00275D",
+      "#BEC0C2"
+    ],
+    "name": "Pacers",
+    "id": 1128
+  },
+  "league": "NBA",
+  "status": "scheduled",
+  "is_full_coverage": true,
+  "id": 9012,
+  "hash": "f08e6aa37d714fc9ca0ed803574e9c74"
+}

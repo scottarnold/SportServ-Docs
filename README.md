@@ -87,7 +87,6 @@ In production, SportServ utilizes a server macro `[sportserver]` to dynamically 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FanServ Demo</title>
   <link rel="icon" type="image/x-icon" href="https://fanserv-media.s3.amazonaws.com/client/shared/favicon.ico" />
-  <!-- NOTE: Add link to external css file -->
   <!-- SportServ DEV: START -->
   <script>
     var ad_config = {

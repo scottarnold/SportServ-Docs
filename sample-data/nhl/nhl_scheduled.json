@@ -1,0 +1,44 @@
+{
+  "away": {
+    "alias": "WSH",
+    "colors": [
+      "#CF132B",
+      "#00214E",
+      "#000000"
+    ],
+    "id": 1116,
+    "logo": "",
+    "market": "Washington",
+    "name": "Capitals",
+    "points": null
+  },
+  "hash": "eb875298252f9d7127f03a58157eae4c",
+  "home": {
+    "alias": "COL",
+    "colors": [
+      "#8B2942",
+      "#01548A",
+      "#000000",
+      "#A9B0B8"
+    ],
+    "id": 1562,
+    "logo": "",
+    "market": "Colorado",
+    "name": "Avalanche",
+    "points": null
+  },
+  "id": 8803,
+  "is_full_coverage": true,
+  "league": "NHL",
+  "scheduled": "2017-03-30T02:00:00Z",
+  "status": "scheduled",
+  "venue": {
+    "address": "1000 Chopper Circle",
+    "capacity": 18007,
+    "city": "Denver",
+    "country_code": "USA",
+    "name": "Pepsi Center",
+    "state": "CO",
+    "zip": 80204
+  }
+}

@@ -1,0 +1,560 @@
+{
+  "away": {
+    "market": "None",
+    "logo": "https://sportserver-media.s3.amazonaws.com/media/teams_logos/Michigan_Wolverines.png",
+    "players": [],
+    "colors": [],
+    "stats": {
+      "foulouts": 0,
+      "team_rebounds": 1,
+      "team_tech_fouls": 0,
+      "minutes": "1:40:00",
+      "player_tech_fouls": 0,
+      "free_throws_att": 7,
+      "offensive_rebounds": 4,
+      "two_points_made": 6,
+      "assists": 8,
+      "two_points_pct": 60,
+      "defensive_rebounds": 14,
+      "field_goals_pct": 42.9,
+      "blocked_att": 1,
+      "turnovers": 6,
+      "personal_fouls": 4,
+      "assists_turnover_ratio": 1.33,
+      "points": 35,
+      "three_points_made": 6,
+      "three_points_att": 18,
+      "field_goals_made": 12,
+      "blocks": 1,
+      "three_points_pct": 33.3,
+      "free_throws_made": 5,
+      "free_throws_pct": 71.4,
+      "steals": 2,
+      "rebounds": 18,
+      "coach_tech_fouls": 0,
+      "ejections": 0,
+      "team_turnovers": 0,
+      "flagrant_fouls": 0,
+      "field_goals_att": 28,
+      "two_points_att": 10
+    },
+    "alias": "MICH",
+    "name": "Michigan Wolverines",
+    "points": 35,
+    "id": 838
+  },
+  "id": 15654,
+  "scheduled": "2017-02-22T23:30:00Z",
+  "extra": {
+    "timeouts": {
+      "home": {
+        "1": [
+          {
+            "clock": "13:27",
+            "description": "Scarlet Knights 60 second timeout",
+            "duration": 60
+          }
+        ],
+        "2": [],
+        "3": [],
+        "4": []
+      },
+      "away": {
+        "1": [
+          {
+            "clock": "00:08",
+            "description": "Wolverines 60 second timeout",
+            "duration": 60
+          }
+        ],
+        "2": [],
+        "3": [],
+        "4": []
+      }
+    }
+  },
+  "events": [
+    {
+      "clock": "00:00",
+      "happened": "2017-02-23T00:19:08Z",
+      "description": "End of 1st Half.",
+      "type": "endperiod"
+    },
+    {
+      "clock": "00:01",
+      "statistics": [
+        {
+          "shot_type": "jump shot",
+          "three_point_shot": true,
+          "player": {
+            "full_name": "Corey Sanders",
+            "jersey_number": "3",
+            "id": "7ae067ff-4545-45f7-90ce-b40480d2a7cd"
+          },
+          "type": "fieldgoal",
+          "team": {
+            "market": "Rutgers",
+            "name": "Scarlet Knights",
+            "id": "b03bb029-4499-4a2c-9074-5071ed360b21"
+          },
+          "made": false
+        }
+      ],
+      "happened": "2017-02-23T00:19:00Z",
+      "description": "Corey Sanders misses three point jump shot",
+      "type": "threepointmiss",
+      "location": {
+        "coord_y": 447,
+        "coord_x": 621
+      },
+      "attribution": {
+        "market": "Rutgers",
+        "name": "Scarlet Knights",
+        "team_basket": "right",
+        "id": "b03bb029-4499-4a2c-9074-5071ed360b21"
+      }
+    },
+    {
+      "clock": "00:01",
+      "statistics": [
+        {
+          "free_throw_type": "regular",
+          "player": {
+            "full_name": "Muhammad-Ali Abdur-Rahkman",
+            "jersey_number": "12",
+            "id": "5f95a3dc-b761-49a3-ab80-779495409148"
+          },
+          "type": "freethrow",
+          "team": {
+            "market": "Michigan",
+            "name": "Wolverines",
+            "id": "bdc2561d-f603-4fab-a262-f1d2af462277"
+          },
+          "made": true,
+          "points": 1
+        }
+      ],
+      "happened": "2017-02-23T00:18:44Z",
+      "description": "Muhammad-Ali Abdur-Rahkman makes regular free throw 3 of 3",
+      "type": "freethrowmade",
+      "location": {
+        "coord_y": 297,
+        "coord_x": 240
+      },
+      "attempt": "3 of 3",
+      "attribution": {
+        "market": "Michigan",
+        "name": "Wolverines",
+        "team_basket": "left",
+        "id": "bdc2561d-f603-4fab-a262-f1d2af462277"
+      },
+      "possession": {
+        "market": "Rutgers",
+        "name": "Scarlet Knights",
+        "id": "b03bb029-4499-4a2c-9074-5071ed360b21"
+      }
+    },
+    {
+      "clock": "00:01",
+      "attribution": {
+        "market": "Michigan",
+        "name": "Wolverines",
+        "team_basket": "left",
+        "id": "bdc2561d-f603-4fab-a262-f1d2af462277"
+      },
+      "description": "Wolverines rebound (deadball)",
+      "happened": "2017-02-23T00:18:23Z",
+      "type": "deadball"
+    },
+    {
+      "clock": "00:01",
+      "statistics": [
+        {
+          "made": false,
+          "free_throw_type": "regular",
+          "player": {
+            "full_name": "Muhammad-Ali Abdur-Rahkman",
+            "jersey_number": "12",
+            "id": "5f95a3dc-b761-49a3-ab80-779495409148"
+          },
+          "type": "freethrow",
+          "team": {
+            "market": "Michigan",
+            "name": "Wolverines",
+            "id": "bdc2561d-f603-4fab-a262-f1d2af462277"
+          }
+        }
+      ],
+      "happened": "2017-02-23T00:18:23Z",
+      "description": "Muhammad-Ali Abdur-Rahkman misses regular free throw 2 of 3",
+      "type": "freethrowmiss",
+      "location": {
+        "coord_y": 303,
+        "coord_x": 235
+      },
+      "attempt": "2 of 3",
+      "attribution": {
+        "market": "Michigan",
+        "name": "Wolverines",
+        "team_basket": "left",
+        "id": "bdc2561d-f603-4fab-a262-f1d2af462277"
+      },
+      "possession": {
+        "market": "Michigan",
+        "name": "Wolverines",
+        "id": "bdc2561d-f603-4fab-a262-f1d2af462277"
+      }
+    },
+    {
+      "clock": "00:01",
+      "attribution": {
+        "market": "Michigan",
+        "name": "Wolverines",
+        "team_basket": "left",
+        "id": "bdc2561d-f603-4fab-a262-f1d2af462277"
+      },
+      "description": "Wolverines rebound (deadball)",
+      "happened": "2017-02-23T00:18:13Z",
+      "type": "deadball"
+    },
+    {
+      "clock": "00:01",
+      "statistics": [
+        {
+          "made": false,
+          "free_throw_type": "regular",
+          "player": {
+            "full_name": "Muhammad-Ali Abdur-Rahkman",
+            "jersey_number": "12",
+            "id": "5f95a3dc-b761-49a3-ab80-779495409148"
+          },
+          "type": "freethrow",
+          "team": {
+            "market": "Michigan",
+            "name": "Wolverines",
+            "id": "bdc2561d-f603-4fab-a262-f1d2af462277"
+          }
+        }
+      ],
+      "happened": "2017-02-23T00:18:13Z",
+      "description": "Muhammad-Ali Abdur-Rahkman misses regular free throw 1 of 3",
+      "type": "freethrowmiss",
+      "location": {
+        "coord_y": 293,
+        "coord_x": 239
+      },
+      "attempt": "1 of 3",
+      "attribution": {
+        "market": "Michigan",
+        "name": "Wolverines",
+        "team_basket": "left",
+        "id": "bdc2561d-f603-4fab-a262-f1d2af462277"
+      },
+      "possession": {
+        "market": "Michigan",
+        "name": "Wolverines",
+        "id": "bdc2561d-f603-4fab-a262-f1d2af462277"
+      }
+    },
+    {
+      "clock": "00:01",
+      "statistics": [
+        {
+          "team": {
+            "market": "Rutgers",
+            "name": "Scarlet Knights",
+            "id": "b03bb029-4499-4a2c-9074-5071ed360b21"
+          },
+          "type": "personalfoul",
+          "player": {
+            "full_name": "Deshawn Freeman",
+            "jersey_number": "33",
+            "id": "7ef17cef-18d9-461a-b548-c3ee0397e2ac"
+          }
+        }
+      ],
+      "happened": "2017-02-23T00:17:43Z",
+      "description": "Deshawn Freeman shooting foul (Zak Irvin draws the foul)",
+      "type": "shootingfoul",
+      "location": {
+        "coord_y": 552,
+        "coord_x": 115
+      },
+      "attribution": {
+        "market": "Rutgers",
+        "name": "Scarlet Knights",
+        "team_basket": "right",
+        "id": "b03bb029-4499-4a2c-9074-5071ed360b21"
+      },
+      "possession": {
+        "market": "Michigan",
+        "name": "Wolverines",
+        "id": "bdc2561d-f603-4fab-a262-f1d2af462277"
+      }
+    },
+    {
+      "clock": "00:02",
+      "statistics": [
+        {
+          "team": {
+            "market": "Rutgers",
+            "name": "Scarlet Knights",
+            "id": "b03bb029-4499-4a2c-9074-5071ed360b21"
+          },
+          "type": "personalfoul",
+          "player": {
+            "full_name": "Deshawn Freeman",
+            "jersey_number": "33",
+            "id": "7ef17cef-18d9-461a-b548-c3ee0397e2ac"
+          }
+        }
+      ],
+      "happened": "2017-02-23T00:17:03Z",
+      "description": "Deshawn Freeman personal foul",
+      "type": "personalfoul",
+      "location": {
+        "coord_y": 283,
+        "coord_x": 337
+      },
+      "attribution": {
+        "market": "Rutgers",
+        "name": "Scarlet Knights",
+        "team_basket": "right",
+        "id": "b03bb029-4499-4a2c-9074-5071ed360b21"
+      },
+      "possession": {
+        "market": "Michigan",
+        "name": "Wolverines",
+        "id": "bdc2561d-f603-4fab-a262-f1d2af462277"
+      }
+    },
+    {
+      "clock": "00:05",
+      "statistics": [
+        {
+          "team": {
+            "market": "Rutgers",
+            "name": "Scarlet Knights",
+            "id": "b03bb029-4499-4a2c-9074-5071ed360b21"
+          },
+          "type": "personalfoul",
+          "player": {
+            "full_name": "Corey Sanders",
+            "jersey_number": "3",
+            "id": "7ae067ff-4545-45f7-90ce-b40480d2a7cd"
+          }
+        }
+      ],
+      "happened": "2017-02-23T00:16:34Z",
+      "description": "Corey Sanders personal foul",
+      "type": "personalfoul",
+      "location": {
+        "coord_y": 393,
+        "coord_x": 400
+      },
+      "attribution": {
+        "market": "Rutgers",
+        "name": "Scarlet Knights",
+        "team_basket": "right",
+        "id": "b03bb029-4499-4a2c-9074-5071ed360b21"
+      },
+      "possession": {
+        "market": "Michigan",
+        "name": "Wolverines",
+        "id": "bdc2561d-f603-4fab-a262-f1d2af462277"
+      }
+    },
+    {
+      "clock": "00:08",
+      "possession": {
+        "market": "Michigan",
+        "name": "Wolverines",
+        "id": "bdc2561d-f603-4fab-a262-f1d2af462277"
+      },
+      "happened": "2017-02-23T00:16:24Z",
+      "description": "Scarlet Knights 60 second timeout",
+      "duration": 60,
+      "type": "teamtimeout",
+      "location": {
+        "coord_y": 304,
+        "coord_x": 559
+      },
+      "attribution": {
+        "market": "Rutgers",
+        "name": "Scarlet Knights",
+        "team_basket": "right",
+        "id": "b03bb029-4499-4a2c-9074-5071ed360b21"
+      }
+    },
+    {
+      "clock": "00:17",
+      "statistics": [
+        {
+          "shot_type": "layup",
+          "player": {
+            "full_name": "Nigel Johnson",
+            "jersey_number": "0",
+            "id": "97382d8f-b8d8-4695-a15f-520d5613b891"
+          },
+          "type": "fieldgoal",
+          "team": {
+            "market": "Rutgers",
+            "name": "Scarlet Knights",
+            "id": "b03bb029-4499-4a2c-9074-5071ed360b21"
+          },
+          "made": true,
+          "points": 2
+        }
+      ],
+      "happened": "2017-02-23T00:15:13Z",
+      "description": "Nigel Johnson makes two point layup",
+      "type": "twopointmade",
+      "location": {
+        "coord_y": 314,
+        "coord_x": 1040
+      },
+      "attribution": {
+        "market": "Rutgers",
+        "name": "Scarlet Knights",
+        "team_basket": "right",
+        "id": "b03bb029-4499-4a2c-9074-5071ed360b21"
+      },
+      "possession": {
+        "market": "Michigan",
+        "name": "Wolverines",
+        "id": "bdc2561d-f603-4fab-a262-f1d2af462277"
+      }
+    },
+    {
+      "clock": "00:23",
+      "statistics": [
+        {
+          "rebound_type": "defensive",
+          "team": {
+            "market": "Rutgers",
+            "name": "Scarlet Knights",
+            "id": "b03bb029-4499-4a2c-9074-5071ed360b21"
+          },
+          "type": "rebound",
+          "player": {
+            "full_name": "Nigel Johnson",
+            "jersey_number": "0",
+            "id": "97382d8f-b8d8-4695-a15f-520d5613b891"
+          }
+        }
+      ],
+      "happened": "2017-02-23T00:15:07Z",
+      "description": "Nigel Johnson defensive rebound",
+      "type": "rebound",
+      "location": {
+        "coord_y": 554,
+        "coord_x": 87
+      },
+      "attribution": {
+        "market": "Rutgers",
+        "name": "Scarlet Knights",
+        "team_basket": "right",
+        "id": "b03bb029-4499-4a2c-9074-5071ed360b21"
+      },
+      "possession": {
+        "market": "Rutgers",
+        "name": "Scarlet Knights",
+        "id": "b03bb029-4499-4a2c-9074-5071ed360b21"
+      }
+    },
+    {
+      "clock": "00:25",
+      "statistics": [
+        {
+          "shot_type": "jump shot",
+          "three_point_shot": true,
+          "player": {
+            "full_name": "Zak Irvin",
+            "jersey_number": "21",
+            "id": "73259a8e-67a2-45a7-9a6a-51f455ccfd51"
+          },
+          "type": "fieldgoal",
+          "team": {
+            "market": "Michigan",
+            "name": "Wolverines",
+            "id": "bdc2561d-f603-4fab-a262-f1d2af462277"
+          },
+          "made": false
+        }
+      ],
+      "happened": "2017-02-23T00:15:07Z",
+      "description": "Zak Irvin misses three point jump shot",
+      "type": "threepointmiss",
+      "location": {
+        "coord_y": 554,
+        "coord_x": 87
+      },
+      "attribution": {
+        "market": "Michigan",
+        "name": "Wolverines",
+        "team_basket": "left",
+        "id": "bdc2561d-f603-4fab-a262-f1d2af462277"
+      }
+    }
+  ],
+  "timeout": "endperiod",
+  "clock": "00:00",
+  "hash": "9c405d07b191848fcc04ae11aa4c62e6",
+  "league": "NCAAM",
+  "status": "inprogress",
+  "venue": {
+    "address": "83 Rockafeller Road",
+    "capacity": 8000,
+    "state": "NJ",
+    "city": "Piscataway",
+    "name": "Louis Brown Athletic Center",
+    "country_code": "USA",
+    "zip": 8854
+  },
+  "is_full_coverage": true,
+  "home": {
+    "logo": "https://sportserver-media.s3.amazonaws.com/media/teams_logos/Rutgers.png",
+    "alias": "RUTG",
+    "players": [],
+    "colors": [],
+    "stats": {
+      "foulouts": 0,
+      "team_rebounds": 2,
+      "team_tech_fouls": 0,
+      "three_points_made": 2,
+      "player_tech_fouls": 0,
+      "free_throws_att": 6,
+      "offensive_rebounds": 1,
+      "assists": 2,
+      "two_points_pct": 47.368,
+      "defensive_rebounds": 11,
+      "field_goals_pct": 39.3,
+      "blocked_att": 1,
+      "turnovers": 5,
+      "personal_fouls": 6,
+      "assists_turnover_ratio": 0.4,
+      "points": 28,
+      "minutes": "1:40:00",
+      "three_points_att": 9,
+      "field_goals_made": 11,
+      "blocks": 1,
+      "three_points_pct": 22.2,
+      "coach_tech_fouls": 0,
+      "two_points_made": 9,
+      "free_throws_pct": 66.7,
+      "steals": 4,
+      "rebounds": 12,
+      "free_throws_made": 4,
+      "ejections": 0,
+      "two_points_att": 19,
+      "flagrant_fouls": 0,
+      "field_goals_att": 28,
+      "team_turnovers": 0
+    },
+    "market": "None",
+    "name": "Rutgers Scarlet Knights",
+    "points": 28,
+    "id": 851
+  },
+  "period": 1
+}

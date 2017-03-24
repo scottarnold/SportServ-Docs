@@ -1,0 +1,67 @@
+{
+  "away": {
+    "alias": "HARV",
+    "colors": [
+    ],
+    "id": 810,
+    "logo": "https://sportserver-media.s3.amazonaws.com/media/teams_logos/Harvard.png",
+    "market": "None",
+    "name": "Harvard Crimson",
+    "players": [
+    ],
+    "points": 0
+  },
+  "clock": "19:11",
+  "extra": {
+    "timeouts": {
+      "away": {
+        "1": [
+        ],
+        "2": [
+        ],
+        "3": [
+        ],
+        "4": [
+        ]
+      },
+      "home": {
+        "1": [
+        ],
+        "2": [
+        ],
+        "3": [
+        ],
+        "4": [
+        ]
+      }
+    }
+  },
+  "hash": "91efc99bcc2ea6811b98e701e308a7fc",
+  "home": {
+    "alias": "PRIN",
+    "colors": [
+    ],
+    "id": 1096,
+    "logo": "https://sportserver-media.s3.amazonaws.com/media/teams_logos/Princeton.png",
+    "market": "None",
+    "name": "Princeton Tigers",
+    "players": [
+    ],
+    "points": 2
+  },
+  "id": 16053,
+  "is_full_coverage": false,
+  "league": "NCAAM",
+  "period": 1,
+  "scheduled": "2017-03-03T22:00:00Z",
+  "status": "inprogress",
+  "venue": {
+    "address": "Princeton University",
+    "capacity": 6854,
+    "city": "Princeton",
+    "country_code": "USA",
+    "name": "Jadwin Gymnasium",
+    "state": "NJ",
+    "zip": 8542
+  }
+}

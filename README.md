@@ -61,7 +61,7 @@ In production, SportServ utilizes a server macro `[sportserver]` to dynamically 
 <!-- SportServ DEV: START -->
 <script>
   var ad_config = {
-    server: 'https://adserver.fanserver.net/sportserver/v1/games',
+    server: 'https://sportserver.fanserver.net/sportserver/v1/games',
     game_id: 7798
   }
 </script>
@@ -90,7 +90,7 @@ In production, SportServ utilizes a server macro `[sportserver]` to dynamically 
   <!-- SportServ DEV: START -->
   <script>
     var ad_config = {
-      server: 'https://adserver.fanserver.net/sportserver/v1/games/',
+      server: 'https://sportserver.fanserver.net/sportserver/v1/games/',
       game_id: 7798
     }
   </script>

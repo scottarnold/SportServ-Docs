@@ -45,7 +45,7 @@ In production, SportServ utilizes a server macro `[sportserver]` to dynamically 
 ###### Archived Data
 ``` HTML
 <!-- SportServ DEV: START -->
-  <script src="https://s3.amazonaws.com/fanserv-static/production/sportserver.js"></script>
+  <script src="https://fanserv-static.s3.amazonaws.com/sportserver.js"></script>
   <script>
     var sportserver = SportServer.init({
       url: './sample-data/mlb/pre-game.json',

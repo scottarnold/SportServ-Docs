@@ -30,9 +30,56 @@ It sounds simple, but the first step to a successful campaign is understanding t
 ## Developing Ads
 
 ### Suggested Workflow
-1. Create flat mock ups of your creative. Consider animations and how live sports data can be used to change the look and message of your ad based on live sports conditions.
-2. Turn that mock up into html, css and js.
-3. SportServ-ify the ad! Use the [Nunjucks](’https://mozilla.github.io/nunjucks/templating.html')  templating language to swap out your dummy data with real live sports data. Don’t worry about matching your ad to a specific team, SportServ will serve your ad to the appropriate team based on your campaign goals.
+1. Create a flat mock up of your ad in a graphics editing program (photoshop, etc). Consider animations and how live sports data can be used to change the look and message of your ad based on live sports conditions.
+2. Take the flat (png, jpg) version of your ad and develop a local static version of the ad using plain html, css, js. At this point the ad won’t be connected to any live data and should follow the same process as developing a static website (albiet with a much smaller target size). You should include “fake” team names and scores in your code. Consider how longer team names will affect the ads’ design.
+3. SportServ-ify the ad! At this point, we’re still developing locally but now we want to replace our static content fillers (team names, fake scores, etc) with dynamic data. In order to do that, we’ll want need to include the `SportServer` library that binds data to your ad.
+```
+<!-- SportServer Library -->
+<script src="https://fanserv-static.s3.amazonaws.com/sportserver.js"></script>
+
+<!— Local Development Init script —>
+<script>
+var sportserver = SportServer.init({
+    url: 'http://your-storage-location.com/sample-data/mlb/pre-game.json',
+      isGameAd: true,
+      renderImmediately: false
+});
+</script>
+```
+The `url` property of the `Sportserver.init()` function is a path to the sports data that you’re going to build for. We offer various types of archived sports data at the bottom of this README (if you don’t see what you’re looking for, please reach out to [brad@fanserv.com](mailto:brad@fanserv.com)). At this point in the development cycle, the sports data is still static and won’t update. The purpose of this step is to transform your static html into a Nunjucks template that is bound to the data feed. See the [skeleton template](#skeleton-template) below for an example.
+4. The next step is to prepare your ad for the ad server. You will replace the sportserv block below with a `[sportserver2]` macro that will dynamically generate the library and init files based on your campaigns targeting.
+```
+Before:
+
+<html>
+… header elements
+<!-- SportServer Library -->
+<script src="https://fanserv-static.s3.amazonaws.com/sportserver.js"></script>
+
+<!— Local Development Init script —>
+<script>
+var sportserver = SportServer.init({
+    url: 'http://your-storage-location.com/sample-data/mlb/pre-game.json',
+      isGameAd: true,
+      renderImmediately: false
+});
+</script>
+… creative code
+</html>
+
+
+After:
+
+<html>
+… header elements
+
+[sportserver2]
+
+… creative code
+</html>
+```
+Use the Nunjucks templating language to swap out your dummy data with real live sports data. Don’t worry about matching your ad to a specific team, SportServ will serve your ad to the appropriate team based on your campaign goals.
+5. The last step is to take your html and copy and paste it into the adops backend. Please reach out to [brad@fanserv.com](brad@fanserv.com) for access and further details.
 
 ### Development Data
 
